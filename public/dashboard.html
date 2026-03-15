@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Auth System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">AuthSystem</h1>
+            <ul class="nav-links">
+                <li><a href="/dashboard" class="active">Dashboard</a></li>
+                <li id="userNav"></li>
+                <li><a href="#" id="logoutBtn" class="btn btn-danger">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h2>Dashboard</h2>
+                    <p>Welcome to your secure dashboard</p>
+                </div>
+
+                <div id="loadingMessage" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading your data...</p>
+                </div>
+
+                <div id="dashboardContent" class="dashboard-content" style="display: none;">
+                    <div class="user-info-card">
+                        <h3>Your Profile</h3>
+                        <div class="info-row">
+                            <span class="label">Name:</span>
+                            <span class="value" id="userName">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Email:</span>
+                            <span class="value" id="userEmail">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">User ID:</span>
+                            <span class="value" id="userId">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Member Since:</span>
+                            <span class="value" id="memberSince">-</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-actions">
+                        <div class="action-card">
+                            <h4>🎉 You're In!</h4>
+                            <p>You have successfully authenticated and accessed this protected route.</p>
+                        </div>
+                        
+                        <div class="action-card">
+                            <h4>🔐 Security Features</h4>
+                            <ul>
+                                <li>JWT Token Authentication</li>
+                                <li>Bcrypt Password Hashing</li>
+                                <li>Protected Routes</li>
+                                <li>Secure Session Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <h3>⚠️ Access Denied</h3>
+                    <p>Please login to view the dashboard.</p>
+                    <a href="/login" class="btn btn-primary">Go to Login</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AuthSystem. Built with Node.js + Express + MySQL</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
